@@ -5,10 +5,9 @@ const ButtonStyled = styled.button`
   color: #ffffffaf;
   background: transparent;
   font-size: 16px;
-  padding: 16px;
   border-radius: 100%;
-  width: 50px;
-  height: 50px;
+  width: ${(props) => (!props.$bigIcon ? "50px" : "65px")};
+  height: ${(props) => (!props.$bigIcon ? "50px" : "65px")};
   border: 2px solid #ffffff5d;
   margin-left: 10px;
   display: flex;
@@ -21,8 +20,17 @@ const ButtonStyled = styled.button`
   }
 `;
 
-const ButtonControl = ({ eventHandle, children }) => {
-  return <ButtonStyled onClick={eventHandle}>{children}</ButtonStyled>;
+const IconStyled = styled.i`
+  background: transparent;
+  color: #bfbfbf;
+`;
+
+const ButtonControl = ({ eventHandle, iconButton, bigIcon = false }) => {
+  return (
+    <ButtonStyled onClick={eventHandle} $bigIcon={bigIcon}>
+      <IconStyled className={iconButton}></IconStyled>
+    </ButtonStyled>
+  );
 };
 
 export default ButtonControl;

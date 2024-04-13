@@ -43,6 +43,7 @@ const TitleChanel = styled.h2`
 const ButtonsChanel = styled.div`
   display: flex;
   background: transparent;
+  align-items: center;
 `;
 
 const ControlChanel = ({
@@ -66,11 +67,19 @@ const ControlChanel = ({
           <TitleChanel>{infoChanel.title}</TitleChanel>
         </InfoChanel>
         <ButtonsChanel>
-          <ButtonControl eventHandle={handleBackChanel}>Back</ButtonControl>
-          <ButtonControl eventHandle={handlePlay}>
-            {!statusPlay ? "play" : "pause"}
-          </ButtonControl>
-          <ButtonControl eventHandle={handleNextChanel}>Next</ButtonControl>
+          <ButtonControl
+            eventHandle={handleBackChanel}
+            iconButton={"fa-solid fa-backward"}
+          ></ButtonControl>
+          <ButtonControl
+            eventHandle={handlePlay}
+            iconButton={!statusPlay ? "fa-solid fa-play" : "fa-solid fa-pause"}
+            bigIcon
+          ></ButtonControl>
+          <ButtonControl
+            eventHandle={handleNextChanel}
+            iconButton={"fa-solid fa-forward"}
+          ></ButtonControl>
         </ButtonsChanel>
       </ContainerSection>
     </ControlSection>
