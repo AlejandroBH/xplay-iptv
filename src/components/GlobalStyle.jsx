@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-  //Reset default styles
   * {
     margin: 0;
     padding: 0;
@@ -12,6 +11,8 @@ const GlobalStyle = createGlobalStyle`
     color: #ffffff;
     position: relative;
     font-family: Arial, Helvetica, sans-serif;
+    scrollbar-color: #bababa #000000;
+    scrollbar-width: none;
   }
 `;
 

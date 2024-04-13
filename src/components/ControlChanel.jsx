@@ -43,6 +43,7 @@ const InfoChanel = styled.div`
   align-items: center;
   gap: 16px;
   background: transparent;
+  cursor: pointer;
 
   @media screen and (width < 720px) {
     background: #ffffff42;
@@ -82,6 +83,7 @@ const ControlChanel = ({
   statusPlay,
   handleBackChanel,
   handleNextChanel,
+  handleListChanels,
 }) => {
   const imageChanel =
     infoChanel.icon === null
@@ -92,7 +94,7 @@ const ControlChanel = ({
   return (
     <ControlSection $onPlay={statusPlay}>
       <ContainerSection>
-        <InfoChanel>
+        <InfoChanel onClick={handleListChanels}>
           <ImageChanel src={imageChanel} alt={altChanel} />
           <TitleChanel>{infoChanel.title}</TitleChanel>
         </InfoChanel>

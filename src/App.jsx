@@ -4,6 +4,7 @@ import chanels from "./chanels.json";
 import GlobalStyle from "./components/GlobalStyle";
 import ControlChanel from "./components/ControlChanel";
 import Container from "./components/Container";
+import ListChanels from "./components/ListChanels";
 
 const App = () => {
   const saveChanel = parseInt(localStorage.getItem("saveChanel")) || 1;
@@ -14,6 +15,7 @@ const App = () => {
     icon: null,
     url: null,
   });
+  const [openListChanels, setOpenListChanels] = useState(false);
 
   localStorage.setItem("saveChanel", numChanel);
 
@@ -29,8 +31,13 @@ const App = () => {
   const handleNextChanel = () =>
     numChanel < chanels.length ? setNumChanel(numChanel + 1) : setNumChanel(1);
 
-  const handleChangeOnWheel = (event) =>
-    event.deltaY == 100 ? handleNextChanel() : handleBackChanel();
+  const handleChangeOnWheel = (event) => {
+    if (openListChanels === false) {
+      event.deltaY == 100 ? handleNextChanel() : handleBackChanel();
+    } else {
+      return;
+    }
+  };
 
   const handleError = () => {
     setObjChanel({
@@ -38,6 +45,10 @@ const App = () => {
       icon: objChanel.icon,
       url: "./assets/static.mp4",
     });
+  };
+
+  const handleListChanels = () => {
+    setOpenListChanels(true);
   };
 
   return (
@@ -51,13 +62,23 @@ const App = () => {
         onError={handleError}
         loop
       ></ReactPlayer>
-      <ControlChanel
-        infoChanel={objChanel}
-        handlePlay={handlePlay}
-        statusPlay={playing}
-        handleBackChanel={handleBackChanel}
-        handleNextChanel={handleNextChanel}
-      />
+      {!openListChanels && (
+        <ControlChanel
+          infoChanel={objChanel}
+          handlePlay={handlePlay}
+          statusPlay={playing}
+          handleBackChanel={handleBackChanel}
+          handleNextChanel={handleNextChanel}
+          handleListChanels={handleListChanels}
+        />
+      )}
+      {openListChanels && (
+        <ListChanels
+          chanelList={chanels}
+          setNumChanel={setNumChanel}
+          setOpenListChanels={setOpenListChanels}
+        />
+      )}
     </Container>
   );
 };
