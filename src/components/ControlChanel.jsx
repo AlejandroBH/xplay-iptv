@@ -72,7 +72,7 @@ const ButtonsChanel = styled.div`
   align-items: center;
 
   @media screen and (width < 720px) {
-    zoom: 1.3;
+    zoom: 1.4;
   }
 `;
 

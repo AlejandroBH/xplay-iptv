@@ -20,7 +20,7 @@ const ButtonStyled = styled.button`
     font-size: ${(props) => (!props.$bigIcon ? "16px" : "24px")};
   }
 
-  &:hover {
+  &:active {
     animation: onClickAnimate 1s 1 ease-out;
   }
 
@@ -31,7 +31,6 @@ const ButtonStyled = styled.button`
   @keyframes onClickAnimate {
     0% {
       color: #ffffff;
-      border: 2px solid #ffffff;
       background: #ffffff6e;
     }
 

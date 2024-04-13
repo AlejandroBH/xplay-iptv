@@ -32,6 +32,14 @@ const App = () => {
   const handleChangeOnWheel = (event) =>
     event.deltaY == 100 ? handleNextChanel() : handleBackChanel();
 
+  const handleError = () => {
+    setObjChanel({
+      title: objChanel.title,
+      icon: objChanel.icon,
+      url: "./assets/static.mp4",
+    });
+  };
+
   return (
     <Container onWheel={handleChangeOnWheel}>
       <GlobalStyle />
@@ -40,6 +48,8 @@ const App = () => {
         height={innerWidth < 720 ? "auto" : "100vh"}
         playing={playing}
         url={objChanel.url}
+        onError={handleError}
+        loop
       ></ReactPlayer>
       <ControlChanel
         infoChanel={objChanel}
