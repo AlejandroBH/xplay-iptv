@@ -3,20 +3,27 @@ import styled from "styled-components";
 import ButtonControl from "./ButtonControl";
 
 const ControlSection = styled.section`
+  opacity: ${(props) => (props.$onPlay ? "0" : "100")};
   width: 100%;
   position: absolute;
   bottom: 0;
   background: transparent;
   z-index: 2;
+  transition: 0.3s ease-out;
+
+  &:hover {
+    opacity: 100;
+  }
 
   @media screen and (width < 720px) {
     position: static;
+    opacity: 100;
   }
 `;
 
 const ContainerSection = styled.div`
   display: flex;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   align-items: center;
   justify-content: space-between;
   max-width: 850px;
@@ -40,6 +47,7 @@ const InfoChanel = styled.div`
   @media screen and (width < 720px) {
     background: #ffffff42;
     padding: 10px;
+    max-width: 600px;
     width: 100%;
     zoom: 0.7;
     border-radius: 16px;
@@ -82,7 +90,7 @@ const ControlChanel = ({
   const altChanel = `Icono de canal ${infoChanel.title}`;
 
   return (
-    <ControlSection>
+    <ControlSection $onPlay={statusPlay}>
       <ContainerSection>
         <InfoChanel>
           <ImageChanel src={imageChanel} alt={altChanel} />

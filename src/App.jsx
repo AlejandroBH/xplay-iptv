@@ -6,13 +6,16 @@ import ControlChanel from "./components/ControlChanel";
 import Container from "./components/Container";
 
 const App = () => {
+  const saveChanel = parseInt(localStorage.getItem("saveChanel")) || 1;
   const [playing, setPlaying] = useState(false);
-  const [numChanel, setNumChanel] = useState(1);
+  const [numChanel, setNumChanel] = useState(saveChanel);
   const [objChanel, setObjChanel] = useState({
     title: null,
     icon: null,
     url: null,
   });
+
+  localStorage.setItem("saveChanel", numChanel);
 
   useEffect(() => {
     setObjChanel(chanels.filter((ch) => ch.id === numChanel)[0]);
