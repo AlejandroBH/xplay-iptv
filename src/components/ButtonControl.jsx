@@ -2,7 +2,6 @@
 import styled from "styled-components";
 
 const ButtonStyled = styled.button`
-  color: #ffffffaf;
   background: transparent;
   font-size: 16px;
   border-radius: 100%;
@@ -15,20 +14,37 @@ const ButtonStyled = styled.button`
   align-items: center;
   cursor: pointer;
 
+  & > i {
+    color: #ffffffaf;
+    background: transparent;
+    font-size: ${(props) => (!props.$bigIcon ? "16px" : "24px")};
+  }
+
+  &:hover {
+    animation: onClickAnimate 1s 1 ease-out;
+  }
+
   &:focus-visible {
     outline: none;
   }
-`;
 
-const IconStyled = styled.i`
-  background: transparent;
-  color: #bfbfbf;
+  @keyframes onClickAnimate {
+    0% {
+      color: #ffffff;
+      border: 2px solid #ffffff;
+      background: #ffffff6e;
+    }
+
+    100% {
+      background: transparent;
+    }
+  }
 `;
 
 const ButtonControl = ({ eventHandle, iconButton, bigIcon = false }) => {
   return (
     <ButtonStyled onClick={eventHandle} $bigIcon={bigIcon}>
-      <IconStyled className={iconButton}></IconStyled>
+      <i className={iconButton}></i>
     </ButtonStyled>
   );
 };

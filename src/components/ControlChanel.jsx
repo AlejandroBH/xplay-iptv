@@ -8,6 +8,10 @@ const ControlSection = styled.section`
   bottom: 0;
   background: transparent;
   z-index: 2;
+
+  @media screen and (width < 720px) {
+    position: static;
+  }
 `;
 
 const ContainerSection = styled.div`
@@ -20,6 +24,11 @@ const ContainerSection = styled.div`
   padding: 15px;
   border-radius: 15px;
   border: 1px solid #ffffff15;
+
+  @media screen and (width < 720px) {
+    flex-direction: column;
+    border: none;
+  }
 `;
 
 const InfoChanel = styled.div`
@@ -27,6 +36,15 @@ const InfoChanel = styled.div`
   align-items: center;
   gap: 16px;
   background: transparent;
+
+  @media screen and (width < 720px) {
+    background: #ffffff42;
+    padding: 10px;
+    width: 100%;
+    zoom: 0.7;
+    border-radius: 16px;
+    margin-bottom: 20px;
+  }
 `;
 
 const ImageChanel = styled.img`
@@ -44,6 +62,10 @@ const ButtonsChanel = styled.div`
   display: flex;
   background: transparent;
   align-items: center;
+
+  @media screen and (width < 720px) {
+    zoom: 1.2;
+  }
 `;
 
 const ControlChanel = ({

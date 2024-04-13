@@ -34,7 +34,7 @@ const App = () => {
       <GlobalStyle />
       <ReactPlayer
         width="100%"
-        height="100vh"
+        height={innerWidth < 720 ? "auto" : "100vh"}
         playing={playing}
         url={objChanel.url}
       ></ReactPlayer>
