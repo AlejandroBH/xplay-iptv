@@ -10,6 +10,7 @@ const ListContainer = styled.section`
   z-index: 2;
   background: rgba(0, 0, 0, 0.9);
   overflow-y: auto;
+  padding-bottom: 100px;
 `;
 
 const ListInfo = styled.div`
