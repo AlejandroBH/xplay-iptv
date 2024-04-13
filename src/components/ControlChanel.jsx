@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
+import ButtonControl from "./ButtonControl";
 
 const ControlSection = styled.section`
   width: 100%;
@@ -39,8 +40,22 @@ const TitleChanel = styled.h2`
   background: transparent;
 `;
 
-const ControlChanel = ({ infoChanel }) => {
-  const imageChanel = `./images/chanels/${infoChanel.icon}`;
+const ButtonsChanel = styled.div`
+  display: flex;
+  background: transparent;
+`;
+
+const ControlChanel = ({
+  infoChanel,
+  handlePlay,
+  statusPlay,
+  handleBackChanel,
+  handleNextChanel,
+}) => {
+  const imageChanel =
+    infoChanel.icon === null
+      ? `./images/chanels/null.png`
+      : `./images/chanels/${infoChanel.icon}`;
   const altChanel = `Icono de canal ${infoChanel.title}`;
 
   return (
@@ -50,6 +65,13 @@ const ControlChanel = ({ infoChanel }) => {
           <ImageChanel src={imageChanel} alt={altChanel} />
           <TitleChanel>{infoChanel.title}</TitleChanel>
         </InfoChanel>
+        <ButtonsChanel>
+          <ButtonControl eventHandle={handleBackChanel}>Back</ButtonControl>
+          <ButtonControl eventHandle={handlePlay}>
+            {!statusPlay ? "play" : "pause"}
+          </ButtonControl>
+          <ButtonControl eventHandle={handleNextChanel}>Next</ButtonControl>
+        </ButtonsChanel>
       </ContainerSection>
     </ControlSection>
   );
