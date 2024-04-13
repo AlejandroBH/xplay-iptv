@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
     background: #000000;
     overflow-y: hidden;
     overflow-x: hidden;
-    color: white;
+    color: #ffffff;
     position: relative;
     font-family: Arial, Helvetica, sans-serif;
   }

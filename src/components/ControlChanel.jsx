@@ -72,7 +72,7 @@ const ButtonsChanel = styled.div`
   align-items: center;
 
   @media screen and (width < 720px) {
-    zoom: 1.2;
+    zoom: 1.3;
   }
 `;
 
@@ -85,8 +85,8 @@ const ControlChanel = ({
 }) => {
   const imageChanel =
     infoChanel.icon === null
-      ? `./images/chanels/null.png`
-      : `./images/chanels/${infoChanel.icon}`;
+      ? `./assets/images/chanels/null.png`
+      : `./assets/images/chanels/${infoChanel.icon}`;
   const altChanel = `Icono de canal ${infoChanel.title}`;
 
   return (

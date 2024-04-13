@@ -1,4 +1,4 @@
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/file";
 import { useEffect, useState } from "react";
 import chanels from "./chanels.json";
 import GlobalStyle from "./components/GlobalStyle";
