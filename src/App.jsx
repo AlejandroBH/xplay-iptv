@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import ReactPlayer from "react-player/file";
 import { useEffect, useState } from "react";
 import chanels from "./chanels.json";
@@ -7,7 +8,9 @@ import Container from "./components/Container";
 import ListChanels from "./components/ListChanels";
 
 const App = () => {
-  const saveChanel = parseInt(localStorage.getItem("saveChanel")) || 1;
+  const activeChanels = chanels.filter((ch) => ch.active);
+
+  const saveChanel = parseInt(localStorage.getItem("saveChanel")) || 0;
   const [playing, setPlaying] = useState(false);
   const [numChanel, setNumChanel] = useState(saveChanel);
   const [objChanel, setObjChanel] = useState({
@@ -17,19 +20,37 @@ const App = () => {
   });
   const [openListChanels, setOpenListChanels] = useState(false);
 
-  localStorage.setItem("saveChanel", numChanel);
+  if (activeChanels.length < saveChanel) {
+    localStorage.setItem("saveChanel", activeChanels.length - 1);
+  } else {
+    localStorage.setItem("saveChanel", numChanel);
+  }
 
   useEffect(() => {
-    setObjChanel(chanels.filter((ch) => ch.id === numChanel)[0]);
+    if (activeChanels.length === 0) {
+      setObjChanel({
+        title: "Sin canales",
+        url: "./assets/static.mp4",
+      });
+    } else {
+      setObjChanel(activeChanels[numChanel]);
+    }
   }, [numChanel]);
 
   const handlePlay = () => setPlaying(!playing);
 
-  const handleBackChanel = () =>
-    numChanel <= 1 ? setNumChanel(chanels.length) : setNumChanel(numChanel - 1);
+  const handleBackChanel = () => {
+    if (activeChanels.length > 0) {
+      numChanel <= 0
+        ? setNumChanel(activeChanels.length - 1)
+        : setNumChanel(numChanel - 1);
+    }
+  };
 
   const handleNextChanel = () =>
-    numChanel < chanels.length ? setNumChanel(numChanel + 1) : setNumChanel(1);
+    numChanel < activeChanels.length - 1
+      ? setNumChanel(numChanel + 1)
+      : setNumChanel(0);
 
   const handleChangeOnWheel = (event) => {
     if (openListChanels === false) {
@@ -40,11 +61,12 @@ const App = () => {
   };
 
   const handleError = () => {
-    setObjChanel({
-      title: objChanel.title,
-      icon: objChanel.icon,
-      url: "./assets/static.mp4",
-    });
+    // setObjChanel({
+    //   title: objChanel.title,
+    //   icon: objChanel.icon,
+    //   url: "./assets/static.mp4",
+    // });
+    setNumChanel(numChanel);
   };
 
   const handleListChanels = () => {
@@ -65,6 +87,7 @@ const App = () => {
       {!openListChanels && (
         <ControlChanel
           infoChanel={objChanel}
+          lengthChanels={activeChanels.length}
           handlePlay={handlePlay}
           statusPlay={playing}
           handleBackChanel={handleBackChanel}
@@ -72,9 +95,9 @@ const App = () => {
           handleListChanels={handleListChanels}
         />
       )}
-      {openListChanels && (
+      {openListChanels && activeChanels.length > 0 && (
         <ListChanels
-          chanelList={chanels}
+          chanelList={activeChanels}
           setNumChanel={setNumChanel}
           setOpenListChanels={setOpenListChanels}
         />

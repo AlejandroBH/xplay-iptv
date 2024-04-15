@@ -52,11 +52,11 @@ const ListTitle = styled.h3`
 const ListChanels = ({ chanelList, setNumChanel, setOpenListChanels }) => {
   return (
     <ListContainer>
-      {chanelList.map((chanel) => (
+      {chanelList.map((chanel, idArray) => (
         <ListInfo
           key={chanel.id}
           onClick={() => {
-            setNumChanel(chanel.id);
+            setNumChanel(idArray);
             setOpenListChanels(false);
           }}
         >

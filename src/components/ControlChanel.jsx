@@ -79,6 +79,7 @@ const ButtonsChanel = styled.div`
 
 const ControlChanel = ({
   infoChanel,
+  lengthChanels,
   handlePlay,
   statusPlay,
   handleBackChanel,
@@ -86,7 +87,7 @@ const ControlChanel = ({
   handleListChanels,
 }) => {
   const imageChanel =
-    infoChanel.icon === null
+    infoChanel.icon === null || infoChanel.icon === undefined
       ? `./assets/images/chanels/null.png`
       : `./assets/images/chanels/${infoChanel.icon}`;
   const altChanel = `Icono de canal ${infoChanel.title}`;
@@ -94,7 +95,11 @@ const ControlChanel = ({
   return (
     <ControlSection $onPlay={statusPlay}>
       <ContainerSection>
-        <InfoChanel onClick={handleListChanels}>
+        <InfoChanel
+          onClick={() => {
+            lengthChanels > 0 ? handleListChanels() : null;
+          }}
+        >
           <ImageChanel src={imageChanel} alt={altChanel} />
           <TitleChanel>{infoChanel.title}</TitleChanel>
         </InfoChanel>
