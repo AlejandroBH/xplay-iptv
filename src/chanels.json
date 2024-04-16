@@ -406,5 +406,309 @@
     "url": "https://unlimited2-cl-isp.dps.live/c9/c9.smil/c9/livestream0/chunks.m3u8",
     "description": "Sin información adicional.",
     "active": true
+  },
+  {
+    "id": 52,
+    "title": "Latino Kids TV",
+    "icon": "latinokidstv.png",
+    "url": "https://cloud5.streaminglivehd.com:3555/hybrid/play.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 53,
+    "title": "VariedTV",
+    "icon": "variedtv.png",
+    "url": "https://cloud5.streaminglivehd.com:3874/live/latinokidsslive.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 54,
+    "title": "DreikoTV",
+    "icon": "dreikotv.png",
+    "url": "https://cloudvideo.servers10.com:8081/8138/tracks-v1a1/mono.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 55,
+    "title": "Eva Televisión",
+    "icon": "evatelevision.png",
+    "url": "https://5ff3d9babae13.streamlock.net/zdznafaere/zdznafaere/chunklist.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 56,
+    "title": "Lanco TV",
+    "icon": "lancotv.png",
+    "url": "https://5e3483cba9114.streamlock.net/hfvhxfwxjm/hfvhxfwxjm/chunklist.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 57,
+    "title": "TVM",
+    "icon": "tvm.png",
+    "url": "https://5ff3d9babae13.streamlock.net/kqafyyxwek/kqafyyxwek/chunklist.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 58,
+    "title": "LMS",
+    "icon": "lms.png",
+    "url": "https://ssh101.bozztv.com/ssh101/canallms/chunks.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 59,
+    "title": "SCH TV",
+    "icon": "schtv.png",
+    "url": "https://panel.miplay.cl:8081/spectrumchannel/tracks-v1a1/mono.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 60,
+    "title": "Origen TV",
+    "icon": "origentv.png",
+    "url": "https://tv.streaming-chile.com:19360/origenhd/origenhd.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 61,
+    "title": "LIM TV",
+    "icon": "limtv.png",
+    "url": "https://5790d294af2dc.streamlock.net/limtv/limtv/chunklist.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 62,
+    "title": "Magic Kids",
+    "icon": "magickids.png",
+    "url": "https://magicstream.ddns.net/magicstream/stream.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 63,
+    "title": "ClickTV",
+    "icon": "clicktv.png",
+    "url": "https://v2.tustreaming.cl/clicktv/tracks-v1a1/mono.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 64,
+    "title": "Taltal TV",
+    "icon": "taltaltv.png",
+    "url": "https://ssh101.bozztv.com/ssh101/taltal/chunks.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 65,
+    "title": "RetroPlay TV",
+    "icon": "retroplaytv.png",
+    "url": "https://v4.tustreaming.cl/retroplaytv/tracks-v1a1/mono.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 66,
+    "title": "NeoTV Digital",
+    "icon": "neotvdigital.png",
+    "url": "https://videostream.shockmedia.com.ar:19360/neotvdigital/neotvdigital.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 67,
+    "title": "Exprezion TV",
+    "icon": "expreziontv.png",
+    "url": "https://vdochile.com:3774/live/cnrhiawklive.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 68,
+    "title": "Ziza Televisión",
+    "icon": "zizatelevision.png",
+    "url": "https://v2.tustreaming.cl/mundopacifico/tracks-v1a1/mono.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 69,
+    "title": "Fanpop TV",
+    "icon": "fanpoptv.png",
+    "url": "https://wifispeed.trapemn.tv:1936/energeek/canal-2p/chunks.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 70,
+    "title": "PlanetaTV Music",
+    "icon": "planetatv.png",
+    "url": "https://scl.edge.grupoz.cl/music/live/chunklist.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 71,
+    "title": "PlanetaTV Peliculas",
+    "icon": "planetatv.png",
+    "url": "https://scl.edge.grupoz.cl/movie/live/chunklist.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 72,
+    "title": "PlanetaTV Family",
+    "icon": "planetatv.png",
+    "url": "https://scl.edge.grupoz.cl/planetatvkids/live/chunklist.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 73,
+    "title": "TeleMax",
+    "icon": "telemax.png",
+    "url": "https://s5.mexside.net:1936/telemax/telemax/chunklist.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 74,
+    "title": "Maxima TV",
+    "icon": "maximatv.png",
+    "url": "https://cageu.bozztv.com/ssh101/ssh101/maxtvstreaming/chunks.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 75,
+    "title": "EnerGeek",
+    "icon": "energeek.png",
+    "url": "https://wifispeed.trapemn.tv:1936/energeek/canal-1p/chunks.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 76,
+    "title": "Gogoplay TV",
+    "icon": "gogoplaytv.png",
+    "url": "https://tgn.bozztv.com/ssh101/ssh101/gogoplay/chunks.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 77,
+    "title": "VoiceOver RadioTV",
+    "icon": "voiceoverradiotv.png",
+    "url": "https://tvservices.fullhd-streaming.com:3941/multi_web/play_720.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 78,
+    "title": "LRP Televisión",
+    "icon": "lrptv.png",
+    "url": "https://v2.tustreaming.cl/lrp/tracks-v1a1/mono.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 79,
+    "title": "MAX Anime",
+    "icon": "maxanime.png",
+    "url": "https://streamyes.alsolnet.com/maxanime/live/chunklist.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 80,
+    "title": "Sicardi TV",
+    "icon": "sicarditv.png",
+    "url": "https://vivo.solumedia.com:19360/sicarditv/sicarditv.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 81,
+    "title": "Carolina TV",
+    "icon": "carolinatv.png",
+    "url": "https://mdstrm.com/live-stream-playlist/63a06468117f42713374addd.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 82,
+    "title": "Carolina TV 2",
+    "icon": "carolinatv.png",
+    "url": "https://jireh-4-hls-video-cl-mundo.dps.live/hls-video/ey6283je82983je9823je8jowowiekldk9838274/carolinatv2/carolinatv2.smil/carolinatv2/livestream1/chunks.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 83,
+    "title": "Solo StandUp",
+    "icon": "solostandup.png",
+    "url": "https://paneltv.online:1936/8116/8116/chunklist.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 84,
+    "title": "Net TV",
+    "icon": "nettv.png",
+    "url": "https://unlimited1-cl-isp.dps.live/nettv/nettv.smil/nettv/livestream1/chunks.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 85,
+    "title": "Ruidos TV",
+    "icon": "ruidostv.png",
+    "url": "https://panel.tvstream.cl:1936/8022/8022/chunklist.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 86,
+    "title": "Latinos Radio",
+    "icon": "latinosradio.png",
+    "url": "https://stmv5.voxtvhd.com.br/latinosmedia/latinosmedia/chunklist.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 87,
+    "title": "TV y TV",
+    "icon": "tvytv.png",
+    "url": "https://stmv5.voxtvhd.com.br/tvytv/tvytv/chunklist.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 88,
+    "title": "Huasco TV",
+    "icon": "huascotv.png",
+    "url": "https://paneltv.online:1936/8024/8024/chunklist.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 89,
+    "title": "ADN",
+    "icon": "adn.png",
+    "url": "https://jireh-2-hls-video-cl-mundo.dps.live/hls-video/931b584451fa6dd1313ee66efbfd5802e3f3bcea/adntv/adntv.smil/adntv/livestream1/chunks.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
   }
 ]

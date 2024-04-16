@@ -54,7 +54,7 @@ const ListChanels = ({ chanelList, setNumChanel, setOpenListChanels }) => {
     <ListContainer>
       {chanelList.map((chanel, idArray) => (
         <ListInfo
-          key={chanel.id}
+          key={idArray}
           onClick={() => {
             setNumChanel(idArray);
             setOpenListChanels(false);
