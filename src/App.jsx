@@ -76,6 +76,13 @@ const App = () => {
         url={objChanel.url}
         onError={handleError}
         loop
+        config={{
+          file: {
+            attributes: {
+              controls: false,
+            },
+          },
+        }}
       ></ReactPlayer>
       {!openListChanels && (
         <ControlChanel
