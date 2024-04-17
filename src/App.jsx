@@ -60,14 +60,7 @@ const App = () => {
     }
   };
 
-  const handleError = () => {
-    // setObjChanel({
-    //   title: objChanel.title,
-    //   icon: objChanel.icon,
-    //   url: "./assets/static.mp4",
-    // });
-    setNumChanel(numChanel);
-  };
+  const handleError = () => setNumChanel(numChanel);
 
   const handleListChanels = () => {
     setOpenListChanels(true);
@@ -97,6 +90,7 @@ const App = () => {
       )}
       {openListChanels && activeChanels.length > 0 && (
         <ListChanels
+          numChanel={numChanel}
           chanelList={activeChanels}
           setNumChanel={setNumChanel}
           setOpenListChanels={setOpenListChanels}

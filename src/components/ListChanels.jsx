@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
+import { useEffect } from "react";
 import styled from "styled-components";
 
 const ListContainer = styled.section`
@@ -38,6 +39,11 @@ const ListInfo = styled.div`
   }
 `;
 
+const IvisibleInput = styled.input`
+  width: 0px;
+  height: 0px;
+`;
+
 const ListImage = styled.img`
   width: 60px;
   height: 60px;
@@ -49,7 +55,16 @@ const ListTitle = styled.h3`
   background: transparent;
 `;
 
-const ListChanels = ({ chanelList, setNumChanel, setOpenListChanels }) => {
+const ListChanels = ({
+  numChanel,
+  chanelList,
+  setNumChanel,
+  setOpenListChanels,
+}) => {
+  useEffect(() => {
+    document.getElementById(`chanel_${numChanel}`).focus();
+  });
+
   return (
     <ListContainer>
       {chanelList.map((chanel, idArray) => (
@@ -60,6 +75,7 @@ const ListChanels = ({ chanelList, setNumChanel, setOpenListChanels }) => {
             setOpenListChanels(false);
           }}
         >
+          <IvisibleInput id={`chanel_${idArray}`} type="radio" readOnly />
           <ListImage src={`./assets/images/chanels/${chanel.icon}`} alt="" />
           <ListTitle>{chanel.title}</ListTitle>
         </ListInfo>
