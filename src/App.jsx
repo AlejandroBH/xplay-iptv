@@ -80,6 +80,7 @@ const App = () => {
           file: {
             attributes: {
               controls: false,
+              playsInline: true,
             },
           },
         }}
