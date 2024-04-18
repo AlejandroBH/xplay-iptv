@@ -74,7 +74,7 @@ const ButtonsChanel = styled.div`
   gap: 10px;
 
   @media screen and (width < 720px) {
-    zoom: 1.1;
+    zoom: 1.35;
     gap: 5px;
   }
 `;
@@ -115,7 +115,7 @@ const ControlChanel = ({
               statusMuted
                 ? "fa-solid fa-volume-xmark"
                 : "fa-solid fa-volume-high"
-            } //fa-solid fa-volume-high
+            }
             sizeIcon="35px"
             mini={true}
           ></ButtonControl>
