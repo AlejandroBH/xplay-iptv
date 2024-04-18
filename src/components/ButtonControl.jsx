@@ -8,7 +8,6 @@ const ButtonStyled = styled.button`
   width: ${(props) => (!props.$bigIcon ? "50px" : "65px")};
   height: ${(props) => (!props.$bigIcon ? "50px" : "65px")};
   border: 2px solid #ffffff5d;
-  margin-left: 10px;
   display: flex;
   justify-content: center;
   align-items: center;

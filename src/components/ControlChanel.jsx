@@ -71,9 +71,11 @@ const ButtonsChanel = styled.div`
   display: flex;
   background: transparent;
   align-items: center;
+  gap: 10px;
 
   @media screen and (width < 720px) {
     zoom: 1.4;
+    gap: 7px;
   }
 `;
 

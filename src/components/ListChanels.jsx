@@ -30,12 +30,27 @@ const ListInfo = styled.div`
     rgba(129, 129, 129, 0.05) 50%,
     rgba(129, 129, 129, 0) 75%
   );
+  transition: 0.3s ease;
+
+  &:hover {
+    transform: translateX(15px);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0) 75%
+    );
+  }
 
   @media screen and (width < 720px) {
     width: 100%;
     max-width: 600px;
     padding: 10px;
     margin: 10px;
+
+    &:hover {
+      transform: none;
+    }
   }
 `;
 
@@ -63,12 +78,15 @@ const ListChanels = ({
 }) => {
   useEffect(() => {
     document.getElementById(`chanel_${numChanel}`).focus();
+    document.querySelector(`.item-list_${numChanel}`).style.borderLeft =
+      "3px solid #ffffff";
   });
 
   return (
     <ListContainer>
       {chanelList.map((chanel, idArray) => (
         <ListInfo
+          className={`item-list_${idArray}`}
           key={idArray}
           onClick={() => {
             setNumChanel(idArray);
