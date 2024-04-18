@@ -36,6 +36,7 @@ const App = () => {
       });
     } else {
       setObjChanel(activeChanels[numChanel]);
+      document.title = `xPlay IPTV - ${activeChanels[numChanel].title}`;
     }
   }, [numChanel]);
 

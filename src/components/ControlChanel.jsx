@@ -77,6 +77,10 @@ const ButtonsChanel = styled.div`
     zoom: 1.35;
     gap: 5px;
   }
+
+  @media screen and (width < 350px) {
+    zoom: 1.1;
+  }
 `;
 
 const ControlChanel = ({
