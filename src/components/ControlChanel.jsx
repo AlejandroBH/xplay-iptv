@@ -74,8 +74,8 @@ const ButtonsChanel = styled.div`
   gap: 10px;
 
   @media screen and (width < 720px) {
-    zoom: 1.4;
-    gap: 7px;
+    zoom: 1.1;
+    gap: 5px;
   }
 `;
 
@@ -83,7 +83,10 @@ const ControlChanel = ({
   infoChanel,
   lengthChanels,
   handlePlay,
+  handlePip,
+  handleMuted,
   statusPlay,
+  statusMuted,
   handleBackChanel,
   handleNextChanel,
   handleListChanels,
@@ -107,17 +110,33 @@ const ControlChanel = ({
         </InfoChanel>
         <ButtonsChanel>
           <ButtonControl
+            eventHandle={handleMuted}
+            iconButton={
+              statusMuted
+                ? "fa-solid fa-volume-xmark"
+                : "fa-solid fa-volume-high"
+            } //fa-solid fa-volume-high
+            sizeIcon="35px"
+            mini={true}
+          ></ButtonControl>
+          <ButtonControl
             eventHandle={handleBackChanel}
             iconButton={"fa-solid fa-backward"}
           ></ButtonControl>
           <ButtonControl
             eventHandle={handlePlay}
             iconButton={!statusPlay ? "fa-solid fa-play" : "fa-solid fa-pause"}
-            bigIcon
+            sizeIcon="65px"
           ></ButtonControl>
           <ButtonControl
             eventHandle={handleNextChanel}
             iconButton={"fa-solid fa-forward"}
+          ></ButtonControl>
+          <ButtonControl
+            eventHandle={handlePip}
+            iconButton={"fa-regular fa-images"}
+            sizeIcon="35px"
+            mini={true}
           ></ButtonControl>
         </ButtonsChanel>
       </ContainerSection>

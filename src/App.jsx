@@ -12,6 +12,8 @@ const App = () => {
 
   const saveChanel = parseInt(localStorage.getItem("saveChanel")) || 0;
   const [playing, setPlaying] = useState(false);
+  const [pip, setPip] = useState(false);
+  const [muted, setMuted] = useState(false);
   const [numChanel, setNumChanel] = useState(saveChanel);
   const [objChanel, setObjChanel] = useState({
     title: null,
@@ -38,6 +40,8 @@ const App = () => {
   }, [numChanel]);
 
   const handlePlay = () => setPlaying(!playing);
+  const handlePip = () => setPip(!pip);
+  const handleMuted = () => setMuted(!muted);
 
   const handleBackChanel = () => {
     if (activeChanels.length > 0) {
@@ -73,6 +77,8 @@ const App = () => {
         width="100%"
         height={innerWidth < 720 ? "auto" : "100vh"}
         playing={playing}
+        pip={pip}
+        muted={muted}
         url={objChanel.url}
         onError={handleError}
         loop
@@ -90,7 +96,10 @@ const App = () => {
           infoChanel={objChanel}
           lengthChanels={activeChanels.length}
           handlePlay={handlePlay}
+          handlePip={handlePip}
+          handleMuted={handleMuted}
           statusPlay={playing}
+          statusMuted={muted}
           handleBackChanel={handleBackChanel}
           handleNextChanel={handleNextChanel}
           handleListChanels={handleListChanels}

@@ -23,7 +23,6 @@ const ListInfo = styled.div`
   gap: 12px;
   align-items: center;
   cursor: pointer;
-  background: rgb(129, 129, 129);
   background: linear-gradient(
     90deg,
     rgba(129, 129, 129, 0.5) 0%,
@@ -50,6 +49,12 @@ const ListInfo = styled.div`
 
     &:hover {
       transform: none;
+      background: linear-gradient(
+        90deg,
+        rgba(129, 129, 129, 0.5) 0%,
+        rgba(129, 129, 129, 0.05) 50%,
+        rgba(129, 129, 129, 0) 75%
+      );
     }
   }
 `;
@@ -78,8 +83,13 @@ const ListChanels = ({
 }) => {
   useEffect(() => {
     document.getElementById(`chanel_${numChanel}`).focus();
-    document.querySelector(`.item-list_${numChanel}`).style.borderLeft =
-      "3px solid #ffffff";
+    if (innerWidth < 720) {
+      document.querySelector(`.item-list_${numChanel}`).style.background =
+        "linear-gradient(90deg,rgba(255, 255, 255, 0.5) 0%,rgba(255, 255, 255, 0.05) 50%,rgba(255, 255, 255, 0) 75%)";
+    } else {
+      document.querySelector(`.item-list_${numChanel}`).style.borderLeft =
+        "3px solid #ffffff";
+    }
   });
 
   return (
