@@ -6,6 +6,7 @@ import GlobalStyle from "./components/GlobalStyle";
 import ControlChanel from "./components/ControlChanel";
 import Container from "./components/Container";
 import ListChanels from "./components/ListChanels";
+// import Header from "./components/Header";
 
 const App = () => {
   const activeChanels = chanels.filter((ch) => ch.active);
@@ -65,7 +66,10 @@ const App = () => {
     }
   };
 
-  const handleError = () => setNumChanel(numChanel);
+  // const handleError = () => setNumChanel(numChanel);
+
+  // const handleSettings = () =>
+  //   console.log("crear pantalla para ajustes de la aplicacion");
 
   const handleListChanels = () => {
     setOpenListChanels(true);
@@ -74,6 +78,7 @@ const App = () => {
   return (
     <Container onWheel={handleChangeOnWheel}>
       <GlobalStyle />
+      {/* <Header handleSettings={handleSettings} /> */}
       <ReactPlayer
         width="100%"
         height={innerWidth < 720 ? "auto" : "100vh"}
@@ -81,7 +86,7 @@ const App = () => {
         pip={pip}
         muted={muted}
         url={objChanel.url}
-        onError={handleError}
+        // onError={handleError}
         loop
         config={{
           file: {
