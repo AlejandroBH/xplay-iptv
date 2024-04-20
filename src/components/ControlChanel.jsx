@@ -138,7 +138,7 @@ const ControlChanel = ({
           ></ButtonControl>
           <ButtonControl
             eventHandle={handlePip}
-            iconButton={"fa-regular fa-images"}
+            iconButton={"fa-solid fa-arrow-up-right-from-square"}
             sizeIcon="35px"
             mini={true}
           ></ButtonControl>
