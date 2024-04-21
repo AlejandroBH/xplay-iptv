@@ -66,7 +66,7 @@ const App = () => {
     }
   };
 
-  // const handleError = () => setNumChanel(numChanel);
+  const handleError = () => setNumChanel(numChanel);
 
   // const handleSettings = () =>
   //   console.log("crear pantalla para ajustes de la aplicacion");
@@ -86,7 +86,7 @@ const App = () => {
         pip={pip}
         muted={muted}
         url={objChanel.url}
-        // onError={handleError}
+        onError={handleError}
         loop
         config={{
           file: {
