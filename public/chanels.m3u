@@ -197,3 +197,19 @@ https://cdn.klowdtv.net/803B48A/n1.klowdtv.net/live1/cine_720p/playlist.m3u8
 https://cloudflare.streamgato.us:3253/live/canalcocotvlive.m3u8
 #EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/dw.png", DW
 https://dwamdstream104.akamaized.net/hls/live/2015530/dwstream104/index.m3u8
+#EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/amcspn.png", AMC Español
+http://stream.flynetwifi.com:1936/live/mobile-079/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/amc.png", AMC
+https://spa-ha-p004.cdn.masmediatv.es/SVoriginOperatorEdge4/smil:87_HD.smil/manifest.m3u8
+#EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/estrellatv.png", Estrella TV
+https://estrellatv-oando.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/vixjajaja.png", ViX Jajaja
+https://d1f3q72l8uy8ur.cloudfront.net/dist/samsungtv/318/hls/master/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/cartoonito.png", Cartoonito
+http://stream.flynetwifi.com:1936/live/mobile-055/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/estrellagames.png", Estrella Games
+https://estrella-games-oando.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/itvdeportes.png", ITV Deportes
+https://thm-it-roku.otteravision.com/thm/it/it.m3u8
+#EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/retroxtv.png", Retrox TV
+https://rpn3.bozztv.com/ssh101/ssh101/retroxtvhd/playlist.m3u8
