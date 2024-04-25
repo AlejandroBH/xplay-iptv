@@ -171,7 +171,7 @@
     "id": 22,
     "title": "Maule Vision",
     "icon": "maulevision.png",
-    "url": "https://vmtv.cl:3787/live/mvilive.m3u8",
+    "url": "https://vmtv.cl:3787/multi_web/play_480.m3u8",
     "description": "Sin información adicional.",
     "active": true
   },
@@ -269,7 +269,7 @@
     "icon": "culturaonline.png",
     "url": "https://paneltv.online:1936/8064/8064/playlist.m3u8",
     "description": "Sin información adicional.",
-    "active": true
+    "active": false
   },
   {
     "id": 35,
@@ -509,7 +509,7 @@
     "icon": "lms.png",
     "url": "https://ssh101.bozztv.com/ssh101/canallms/chunks.m3u8",
     "description": "Sin información adicional.",
-    "active": true
+    "active": false
   },
   {
     "id": 65,
@@ -523,7 +523,7 @@
     "id": 66,
     "title": "Origen TV",
     "icon": "origentv.png",
-    "url": "https://tv.streaming-chile.com:19360/origenhd/origenhd.m3u8",
+    "url": "https://tv.streaming-chile.com:8081/origentvhd/tracks-v1a1/mono.m3u8",
     "description": "Sin información adicional.",
     "active": true
   },
@@ -541,7 +541,7 @@
     "icon": "magickids.png",
     "url": "https://magicstream.ddns.net/magicstream/stream.m3u8",
     "description": "Sin información adicional.",
-    "active": true
+    "active": false
   },
   {
     "id": 69,
@@ -709,7 +709,7 @@
     "icon": "solostandup.png",
     "url": "https://paneltv.online:1936/8116/8116/chunklist.m3u8",
     "description": "Sin información adicional.",
-    "active": true
+    "active": false
   },
   {
     "id": 90,
@@ -749,7 +749,7 @@
     "icon": "huascotv.png",
     "url": "https://paneltv.online:1936/8024/8024/chunklist.m3u8",
     "description": "Sin información adicional.",
-    "active": true
+    "active": false
   },
   {
     "id": 95,
@@ -757,7 +757,7 @@
     "icon": "comedycentral.png",
     "url": "http://stream.flynetwifi.com:1936/live/mobile-001/playlist.m3u8",
     "description": "Sin información adicional.",
-    "active": true
+    "active": false
   },
   {
     "id": 96,
@@ -797,7 +797,7 @@
     "icon": "amcspn.png",
     "url": "http://stream.flynetwifi.com:1936/live/mobile-079/playlist.m3u8",
     "description": "Sin información adicional.",
-    "active": true
+    "active": false
   },
   {
     "id": 101,
@@ -829,7 +829,7 @@
     "icon": "cartoonito.png",
     "url": "http://stream.flynetwifi.com:1936/live/mobile-055/playlist.m3u8",
     "description": "Sin información adicional.",
-    "active": true
+    "active": false
   },
   {
     "id": 105,
