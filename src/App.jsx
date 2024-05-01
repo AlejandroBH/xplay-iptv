@@ -85,17 +85,11 @@ const App = () => {
         playing={playing}
         pip={pip}
         muted={muted}
+        playsinline={true}
+        controls={false}
         url={objChanel.url}
         onError={handleError}
         loop
-        config={{
-          file: {
-            attributes: {
-              controls: false,
-              playsInline: true,
-            },
-          },
-        }}
       ></ReactPlayer>
       {!openListChanels && (
         <ControlChanel
