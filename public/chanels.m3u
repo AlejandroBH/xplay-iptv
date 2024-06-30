@@ -1,8 +1,6 @@
 #EXTM3U
 #EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/tv+.png", TV+
 https://mdstrm.com/live-stream-playlist/5c0e8b19e4c87f3f2d3e6a59.m3u8
-#EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/tvn.png", TVN
-https://sktv-forwarders.7m.pl/get.php?x=TVN
 #EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/tvchile.png", TV Chile
 https://mdstrm.com/live-stream-playlist/533adcc949386ce765657d7c.m3u8
 #EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/24play.png", 24 Play
@@ -11,8 +9,6 @@ https://mdstrm.com/live-stream-playlist/57d1a22064f5d85712b20dab.m3u8
 https://mdstrm.com/live-stream-playlist/5653641561b4eba30a7e4929.m3u8
 #EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/ntv.png", NTV
 https://marine2.miplay.cl/ntv/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/meganoticias.png", Meganoticias
-https://mdstrm.com/live-stream-playlist/561430ae330428c223687e1e.m3u8
 #EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/mega.png", Mega
 https://unlimited1-cl-isp.dps.live/mega/mega.smil/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/canal13.png", Canal 13
@@ -35,10 +31,14 @@ https://origin.dpsgo.com/ssai/event/g7_JOM0ORki9SR5RKHe-Kw/master.m3u8
 https://origin.dpsgo.com/ssai/event/BBp0VeP6QtOOlH8nu3bWTg/master.m3u8
 #EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/t13f.png", 13 Festival
 https://origin.dpsgo.com/ssai/event/Nftd0fM2SXasfDlRphvUsg/master.m3u8
+#EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/chvnoticias.png", CHV Noticias
+https://mdstrm.com/live-stream-playlist/5ef5fb3025c9a6086c457c55.m3u8
 #EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/contivision.png", Contivision
 https://unlimited2-cl-isp.dps.live/cm/cm.smil/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/lared.png", La Red
 https://unlimited1-cl-isp.dps.live/lared/lared.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/maulevision.png", Maule Vision
+https://us.streaminghd.cl/maulevision/index.m3u8
 #EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/campoabiertotv.png", Campo Abierto TV
 https://v1.tustreaming.cl:19360/campoabierto/campoabierto.m3u8
 #EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/pandamaxtv.png", Pandamax TV
@@ -73,8 +73,6 @@ https://stmv4.voxtvhd.com.br/crtvchile/crtvchile/playlist.m3u8
 https://wifispeed.trapemn.tv:1936/comunales/caracola-tv/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/tevex.png", Tevex
 https://v2.tustreaming.cl/tevex/index.m3u8
-#EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/tvsalud.png", TV Salud
-https://panel.miplay.cl:8081/tvsalud/index.m3u8
 #EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/chilechannel.png", Chile Channel
 https://v2.tustreaming.cl/chilechannel/index.m3u8
 #EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/americatvchile.png", América TV Chile
@@ -121,10 +119,6 @@ https://5ff3d9babae13.streamlock.net/zdznafaere/zdznafaere/chunklist.m3u8
 https://5e3483cba9114.streamlock.net/hfvhxfwxjm/hfvhxfwxjm/chunklist.m3u8
 #EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/tvm.png", TVM
 https://stream.skarnetchile.com:19360/canaltvm/canaltvm.m3u8
-#EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/lms.png", LMS
-https://ssh101.bozztv.com/ssh101/canallms/chunks.m3u8
-#EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/schtv.png", SCH TV
-https://panel.miplay.cl:8081/spectrumchannel/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/origentv.png", Origen TV
 https://tv.streaming-chile.com:8081/origentvhd/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/platzitv.png", Platzi TV
@@ -177,8 +171,6 @@ https://cloudflare.streamgato.us:3253/live/canalcocotvlive.m3u8
 https://dwamdstream104.akamaized.net/hls/live/2015530/dwstream104/index.m3u8
 #EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/estrellatv.png", Estrella TV
 https://estrellatv-oando.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/vixjajaja.png", ViX Jajaja
-https://d1f3q72l8uy8ur.cloudfront.net/dist/samsungtv/318/hls/master/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/itvdeportes.png", ITV Deportes
 https://thm-it-roku.otteravision.com/thm/it/it.m3u8
 #EXTINF:-1 tvg-logo="https://iptv.xplay.cl/assets/images/chanels/retroxtv.png", Retrox TV

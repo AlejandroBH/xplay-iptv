@@ -104,6 +104,14 @@
     "active": true
   },
   {
+    "id": 19,
+    "title": "CHV Noticias",
+    "icon": "chvnoticias.png",
+    "url": "https://mdstrm.com/live-stream-playlist/5ef5fb3025c9a6086c457c55.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
     "id": 20,
     "title": "Contivision",
     "icon": "contivision.png",
@@ -116,6 +124,14 @@
     "title": "La Red",
     "icon": "lared.png",
     "url": "https://unlimited1-cl-isp.dps.live/lared/lared.smil/playlist.m3u8",
+    "description": "Sin información adicional.",
+    "active": true
+  },
+  {
+    "id": 22,
+    "title": "Maule Vision",
+    "icon": "maulevision.png",
+    "url": "https://us.streaminghd.cl/maulevision/index.m3u8",
     "description": "Sin información adicional.",
     "active": true
   },
@@ -252,14 +268,6 @@
     "title": "Tevex",
     "icon": "tevex.png",
     "url": "https://v2.tustreaming.cl/tevex/index.m3u8",
-    "description": "Sin información adicional.",
-    "active": true
-  },
-  {
-    "id": 41,
-    "title": "TV Salud",
-    "icon": "tvsalud.png",
-    "url": "https://panel.miplay.cl:8081/tvsalud/index.m3u8",
     "description": "Sin información adicional.",
     "active": true
   },
@@ -444,22 +452,6 @@
     "title": "TVM",
     "icon": "tvm.png",
     "url": "https://stream.skarnetchile.com:19360/canaltvm/canaltvm.m3u8",
-    "description": "Sin información adicional.",
-    "active": true
-  },
-  {
-    "id": 65,
-    "title": "LMS",
-    "icon": "lms.png",
-    "url": "https://ssh101.bozztv.com/ssh101/canallms/chunks.m3u8",
-    "description": "Sin información adicional.",
-    "active": true
-  },
-  {
-    "id": 66,
-    "title": "SCH TV",
-    "icon": "schtv.png",
-    "url": "https://panel.miplay.cl:8081/spectrumchannel/tracks-v1a1/mono.m3u8",
     "description": "Sin información adicional.",
     "active": true
   },
@@ -668,14 +660,6 @@
     "title": "Estrella TV",
     "icon": "estrellatv.png",
     "url": "https://estrellatv-oando.amagi.tv/playlist.m3u8",
-    "description": "Sin información adicional.",
-    "active": true
-  },
-  {
-    "id": 104,
-    "title": "ViX Jajaja",
-    "icon": "vixjajaja.png",
-    "url": "https://d1f3q72l8uy8ur.cloudfront.net/dist/samsungtv/318/hls/master/playlist.m3u8",
     "description": "Sin información adicional.",
     "active": true
   },
