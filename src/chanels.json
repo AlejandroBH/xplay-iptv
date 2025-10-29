@@ -91,7 +91,7 @@
     "id": 12,
     "title": "13 Prime",
     "icon": "t13p.png",
-    "url": "https://origin.dpsgo.com/ssai/event/p4mmBxEzSmKAxY1GusOHrw/master.m3u8",
+    "url": "https://origin.dpsgo.com/ssai/event/p4mmBxEzSmKAxY1GusOHrw/master.m3u8i",
     "description": "Sin información adicional.",
     "active": false
   },
@@ -107,7 +107,7 @@
     "id": 14,
     "title": "13 Kids",
     "icon": "t13k.png",
-    "url": "https://origin.dpsgo.com/ssai/event/LhHrVtyeQkKZ-Ye_xEU75g/master.m3u8",
+    "url": "https://origin.dpsgo.com/ssai/event/LhHrVtyeQkKZ-Ye_xEU75g/master.m3u8i",
     "description": "Sin información adicional.",
     "active": false
   },
@@ -115,7 +115,7 @@
     "id": 15,
     "title": "13 Humor",
     "icon": "t13h.png",
-    "url": "https://origin.dpsgo.com/ssai/event/cKWySXKgSK-SzlJmESkOWw/master.m3u8",
+    "url": "https://origin.dpsgo.com/ssai/event/cKWySXKgSK-SzlJmESkOWw/master.m3u8i",
     "description": "Sin información adicional.",
     "active": false
   },
@@ -131,7 +131,7 @@
     "id": 17,
     "title": "13 Entretencion",
     "icon": "t13e.png",
-    "url": "https://origin.dpsgo.com/ssai/event/BBp0VeP6QtOOlH8nu3bWTg/master.m3u8",
+    "url": "https://origin.dpsgo.com/ssai/event/BBp0VeP6QtOOlH8nu3bWTg/master.m3u8i",
     "description": "Sin información adicional.",
     "active": false
   },
