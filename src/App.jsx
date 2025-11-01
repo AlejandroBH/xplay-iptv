@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import ReactPlayer from "react-player/file";
 import { useEffect, useState } from "react";
-import chanels from "../public/chanels.json";
+import chanels from "./chanels.json";
 import GlobalStyle from "./components/GlobalStyle";
 import ControlChanel from "./components/ControlChanel";
 import Container from "./components/Container";
