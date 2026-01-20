@@ -92,6 +92,8 @@ const ControlChanel = ({
   handleMuted,
   statusPlay,
   statusMuted,
+  statusPip = false,
+  pipSupported = true,
   handleBackChanel,
   handleNextChanel,
   handleListChanels,
@@ -139,12 +141,18 @@ const ControlChanel = ({
             eventHandle={handleNextChanel}
             iconButton={"fa-solid fa-forward"}
           ></ButtonControl>
-          <ButtonControl
-            eventHandle={handlePip}
-            iconButton={"fa-solid fa-arrow-up-right-from-square"}
-            sizeIcon="35px"
-            mini={true}
-          ></ButtonControl>
+          {pipSupported && (
+            <ButtonControl
+              eventHandle={handlePip}
+              iconButton={"fa-solid fa-arrow-up-right-from-square"}
+              sizeIcon="35px"
+              mini={true}
+              style={{
+                color: statusPip ? '#4a9eff' : 'inherit',
+                opacity: statusPip ? 1 : 0.8
+              }}
+            ></ButtonControl>
+          )}
         </ButtonsChanel>
       </ContainerSection>
     </ControlSection>
