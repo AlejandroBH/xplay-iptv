@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
 import ButtonControl from "./ButtonControl";
+import { useWindowSize } from "../hooks";
 
 const ControlSection = styled.section`
   opacity: ${(props) => (props.$onPlay ? "0" : "100")};
@@ -95,6 +96,8 @@ const ControlChanel = ({
   handleNextChanel,
   handleListChanels,
 }) => {
+  const { width: windowWidth } = useWindowSize();
+
   const imageChanel =
     infoChanel.icon === null || infoChanel.icon === undefined
       ? `./assets/images/chanels/null.png`

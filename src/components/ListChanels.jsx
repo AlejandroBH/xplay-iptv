@@ -1,15 +1,13 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import styled from "styled-components";
 
 const ListContainer = styled.section`
   position: absolute;
   width: 100%;
   height: 100vh;
-  background: transparent;
-  z-index: 2;
   background: rgba(0, 0, 0, 0.9);
+  z-index: 2;
   overflow-y: auto;
   padding-bottom: 100px;
 `;
@@ -30,6 +28,8 @@ const ListInfo = styled.div`
     rgba(129, 129, 129, 0) 75%
   );
   transition: 0.3s ease;
+  border-left: ${(props) =>
+    props.$isSelected ? "3px solid #ffffff" : "3px solid transparent"};
 
   &:hover {
     transform: translateX(15px);
@@ -46,6 +46,11 @@ const ListInfo = styled.div`
     max-width: 600px;
     padding: 10px;
     margin: 10px;
+    border-left: none;
+    background: ${(props) =>
+      props.$isSelected
+        ? "linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 75%)"
+        : "linear-gradient(90deg, rgba(129, 129, 129, 0.5) 0%, rgba(129, 129, 129, 0.05) 50%, rgba(129, 129, 129, 0) 75%)"};
 
     &:hover {
       transform: none;
@@ -57,11 +62,6 @@ const ListInfo = styled.div`
       );
     }
   }
-`;
-
-const IvisibleInput = styled.input`
-  width: 0px;
-  height: 0px;
 `;
 
 const ListImage = styled.img`
@@ -81,30 +81,38 @@ const ListChanels = ({
   setNumChanel,
   setOpenListChanels,
 }) => {
+  const selectedRef = useRef(null);
+
   useEffect(() => {
-    document.getElementById(`chanel_${numChanel}`).focus();
-    if (innerWidth < 720) {
-      document.querySelector(`.item-list_${numChanel}`).style.background =
-        "linear-gradient(90deg,rgba(255, 255, 255, 0.5) 0%,rgba(255, 255, 255, 0.05) 50%,rgba(255, 255, 255, 0) 75%)";
-    } else {
-      document.querySelector(`.item-list_${numChanel}`).style.borderLeft =
-        "3px solid #ffffff";
+    if (selectedRef.current) {
+      selectedRef.current.scrollIntoView({
+        behavior: "instant",
+        block: "center",
+      });
     }
-  });
+  }, []);
+
+  const handleChanelClick = (idArray) => {
+    setNumChanel(idArray);
+    setOpenListChanels(false);
+  };
 
   return (
     <ListContainer>
       {chanelList.map((chanel, idArray) => (
         <ListInfo
-          className={`item-list_${idArray}`}
-          key={idArray}
-          onClick={() => {
-            setNumChanel(idArray);
-            setOpenListChanels(false);
-          }}
+          key={chanel.id}
+          ref={idArray === numChanel ? selectedRef : null}
+          $isSelected={idArray === numChanel}
+          onClick={() => handleChanelClick(idArray)}
         >
-          <IvisibleInput id={`chanel_${idArray}`} type="radio" readOnly />
-          <ListImage src={`./assets/images/chanels/${chanel.icon}`} alt="" />
+          <ListImage
+            src={`./assets/images/chanels/${chanel.icon}`}
+            alt={`Logo de ${chanel.title}`}
+            onError={(e) => {
+              e.target.src = "./assets/images/chanels/null.png";
+            }}
+          />
           <ListTitle>{chanel.title}</ListTitle>
         </ListInfo>
       ))}

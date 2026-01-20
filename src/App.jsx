@@ -1,21 +1,22 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import ReactPlayer from "react-player/file";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo, useCallback } from "react";
 import chanels from "./chanels.json";
 import GlobalStyle from "./components/GlobalStyle";
 import ControlChanel from "./components/ControlChanel";
 import Container from "./components/Container";
 import ListChanels from "./components/ListChanels";
-// import Header from "./components/Header";
+import { useLocalStorage, useWindowSize } from "./hooks";
 
 const App = () => {
-  const activeChanels = chanels.filter((ch) => ch.active);
+  const activeChanels = useMemo(() => chanels.filter((ch) => ch.active), []);
 
-  const saveChanel = parseInt(localStorage.getItem("saveChanel")) || 0;
+  const [numChanel, setNumChanel] = useLocalStorage("saveChanel", 0);
+
+  const { width: windowWidth } = useWindowSize();
+
   const [playing, setPlaying] = useState(false);
   const [pip, setPip] = useState(false);
   const [muted, setMuted] = useState(false);
-  const [numChanel, setNumChanel] = useState(saveChanel);
   const [objChanel, setObjChanel] = useState({
     title: null,
     icon: null,
@@ -23,11 +24,11 @@ const App = () => {
   });
   const [openListChanels, setOpenListChanels] = useState(false);
 
-  if (activeChanels.length < saveChanel) {
-    localStorage.setItem("saveChanel", activeChanels.length - 1);
-  } else {
-    localStorage.setItem("saveChanel", numChanel);
-  }
+  useEffect(() => {
+    if (activeChanels.length > 0 && numChanel >= activeChanels.length) {
+      setNumChanel(activeChanels.length - 1);
+    }
+  }, [activeChanels.length, numChanel, setNumChanel]);
 
   useEffect(() => {
     if (activeChanels.length === 0) {
@@ -35,53 +36,53 @@ const App = () => {
         title: "Sin canales",
         url: "./assets/static.mp4",
       });
+      document.title = "xPlay IPTV - Sin canales";
     } else {
-      setObjChanel(activeChanels[numChanel]);
-      document.title = `xPlay IPTV - ${activeChanels[numChanel].title}`;
+      const currentChanel = activeChanels[numChanel];
+      setObjChanel(currentChanel);
+      document.title = `xPlay IPTV - ${currentChanel.title}`;
     }
-  }, [numChanel]);
+  }, [numChanel, activeChanels]);
 
-  const handlePlay = () => setPlaying(!playing);
-  const handlePip = () => setPip(!pip);
-  const handleMuted = () => setMuted(!muted);
+  const handlePlay = useCallback(() => setPlaying((prev) => !prev), []);
+  const handlePip = useCallback(() => setPip((prev) => !prev), []);
+  const handleMuted = useCallback(() => setMuted((prev) => !prev), []);
 
-  const handleBackChanel = () => {
+  const handleBackChanel = useCallback(() => {
     if (activeChanels.length > 0) {
-      numChanel <= 0
-        ? setNumChanel(activeChanels.length - 1)
-        : setNumChanel(numChanel - 1);
+      setNumChanel((prev) => (prev <= 0 ? activeChanels.length - 1 : prev - 1));
     }
-  };
+  }, [activeChanels.length, setNumChanel]);
 
-  const handleNextChanel = () =>
-    numChanel < activeChanels.length - 1
-      ? setNumChanel(numChanel + 1)
-      : setNumChanel(0);
-
-  const handleChangeOnWheel = (event) => {
-    if (openListChanels === false) {
-      event.deltaY == 100 ? handleNextChanel() : handleBackChanel();
-    } else {
-      return;
+  const handleNextChanel = useCallback(() => {
+    if (activeChanels.length > 0) {
+      setNumChanel((prev) => (prev < activeChanels.length - 1 ? prev + 1 : 0));
     }
-  };
+  }, [activeChanels.length, setNumChanel]);
 
-  const handleError = () => setNumChanel(numChanel);
+  const handleChangeOnWheel = useCallback(
+    (event) => {
+      if (!openListChanels) {
+        event.deltaY === 100 ? handleNextChanel() : handleBackChanel();
+      }
+    },
+    [openListChanels, handleNextChanel, handleBackChanel],
+  );
 
-  // const handleSettings = () =>
-  //   console.log("crear pantalla para ajustes de la aplicacion");
+  const handleError = useCallback(() => {
+    console.error("Error al cargar el stream del canal");
+  }, []);
 
-  const handleListChanels = () => {
+  const handleListChanels = useCallback(() => {
     setOpenListChanels(true);
-  };
+  }, []);
 
   return (
     <Container onWheel={handleChangeOnWheel}>
       <GlobalStyle />
-      {/* <Header handleSettings={handleSettings} /> */}
       <ReactPlayer
         width="100%"
-        height={innerWidth < 720 ? "auto" : "100vh"}
+        height={windowWidth < 720 ? "auto" : "100vh"}
         playing={playing}
         pip={pip}
         muted={muted}
@@ -90,7 +91,7 @@ const App = () => {
         url={objChanel.url}
         onError={handleError}
         loop
-      ></ReactPlayer>
+      />
       {!openListChanels && (
         <ControlChanel
           infoChanel={objChanel}
