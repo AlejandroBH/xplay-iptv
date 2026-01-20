@@ -2,6 +2,16 @@
 
 Reproductor de canales IPTV chilenos hecho con React y Vite.
 
+## Características
+
+- 📺 Reproducción de canales en vivo
+- ⌨️ Atajos de teclado para navegación rápida
+- 🔍 Búsqueda de canales en tiempo real
+- 📊 Indicador de canal actual
+- ⏳ Indicador visual de buffering
+- 📱 Diseño responsive (desktop y móvil)
+- 💾 Recuerda el último canal reproducido
+
 ## Instalación
 
 ```bash
@@ -17,13 +27,26 @@ npm run build    # Build para producción
 npm run preview  # Preview del build
 ```
 
-## Cómo usar
+## Controles
 
-- **Play/Pause**: Botón de reproducción
-- **Cambiar canal**: Botones anterior/siguiente o scroll del mouse
-- **Lista de canales**: Click en el nombre del canal
-- **Silenciar**: Botón de volumen
-- **Picture-in-Picture**: Botón PiP
+### Mouse/Touch
+- **Click en ▶️/⏸️**: Play/Pause
+- **Click en ⏮️/⏭️**: Canal anterior/siguiente
+- **Scroll del mouse**: Cambiar canales
+- **Click en nombre del canal**: Abrir lista
+- **Click en 🔊/🔇**: Silenciar/Activar audio
+
+### Teclado
+- **↑/↓**: Canal anterior/siguiente
+- **Espacio**: Play/Pause
+- **M**: Silenciar/Activar audio
+- **L**: Abrir lista de canales
+- **Esc**: Cerrar lista de canales
+
+### Búsqueda
+- Abre la lista de canales (tecla **L** o click en nombre)
+- Escribe para filtrar canales en tiempo real
+- Presiona **Esc** para cerrar
 
 ## Agregar canales
 

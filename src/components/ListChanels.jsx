@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+import SearchInput from "./SearchInput";
 
 const ListContainer = styled.section`
   position: absolute;
@@ -48,9 +49,9 @@ const ListInfo = styled.div`
     margin: 10px;
     border-left: none;
     background: ${(props) =>
-      props.$isSelected
-        ? "linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 75%)"
-        : "linear-gradient(90deg, rgba(129, 129, 129, 0.5) 0%, rgba(129, 129, 129, 0.05) 50%, rgba(129, 129, 129, 0) 75%)"};
+    props.$isSelected
+      ? "linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 75%)"
+      : "linear-gradient(90deg, rgba(129, 129, 129, 0.5) 0%, rgba(129, 129, 129, 0.05) 50%, rgba(129, 129, 129, 0) 75%)"};
 
     &:hover {
       transform: none;
@@ -75,6 +76,13 @@ const ListTitle = styled.h3`
   background: transparent;
 `;
 
+const NoResults = styled.div`
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.6);
+`;
+
 const ListChanels = ({
   numChanel,
   chanelList,
@@ -82,40 +90,56 @@ const ListChanels = ({
   setOpenListChanels,
 }) => {
   const selectedRef = useRef(null);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredChannels = chanelList.filter((chanel) =>
+    chanel.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   useEffect(() => {
-    if (selectedRef.current) {
+    if (selectedRef.current && !searchTerm) {
       selectedRef.current.scrollIntoView({
         behavior: "instant",
         block: "center",
       });
     }
-  }, []);
+  }, [searchTerm]);
 
   const handleChanelClick = (idArray) => {
     setNumChanel(idArray);
     setOpenListChanels(false);
+    setSearchTerm("");
   };
 
   return (
     <ListContainer>
-      {chanelList.map((chanel, idArray) => (
-        <ListInfo
-          key={chanel.id}
-          ref={idArray === numChanel ? selectedRef : null}
-          $isSelected={idArray === numChanel}
-          onClick={() => handleChanelClick(idArray)}
-        >
-          <ListImage
-            src={`./assets/images/chanels/${chanel.icon}`}
-            alt={`Logo de ${chanel.title}`}
-            onError={(e) => {
-              e.target.src = "./assets/images/chanels/null.png";
-            }}
-          />
-          <ListTitle>{chanel.title}</ListTitle>
-        </ListInfo>
-      ))}
+      <SearchInput value={searchTerm} onChange={setSearchTerm} />
+
+      {filteredChannels.length === 0 ? (
+        <NoResults>No se encontraron canales</NoResults>
+      ) : (
+        filteredChannels.map((chanel, idArray) => {
+          const originalIndex = chanelList.findIndex(ch => ch.id === chanel.id);
+
+          return (
+            <ListInfo
+              key={chanel.id}
+              ref={originalIndex === numChanel ? selectedRef : null}
+              $isSelected={originalIndex === numChanel}
+              onClick={() => handleChanelClick(originalIndex)}
+            >
+              <ListImage
+                src={`./assets/images/chanels/${chanel.icon}`}
+                alt={`Logo de ${chanel.title}`}
+                onError={(e) => {
+                  e.target.src = "./assets/images/chanels/null.png";
+                }}
+              />
+              <ListTitle>{chanel.title}</ListTitle>
+            </ListInfo>
+          );
+        })
+      )}
     </ListContainer>
   );
 };

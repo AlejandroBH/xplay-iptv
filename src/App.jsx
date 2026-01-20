@@ -5,18 +5,21 @@ import GlobalStyle from "./components/GlobalStyle";
 import ControlChanel from "./components/ControlChanel";
 import Container from "./components/Container";
 import ListChanels from "./components/ListChanels";
-import { useLocalStorage, useWindowSize } from "./hooks";
+import ChannelIndicator from "./components/ChannelIndicator";
+import BufferingSpinner from "./components/BufferingSpinner";
+import { useLocalStorage, useWindowSize, useKeyboardShortcuts } from "./hooks";
 
 const App = () => {
   const activeChanels = useMemo(() => chanels.filter((ch) => ch.active), []);
 
   const [numChanel, setNumChanel] = useLocalStorage("saveChanel", 0);
-
   const { width: windowWidth } = useWindowSize();
 
   const [playing, setPlaying] = useState(false);
   const [pip, setPip] = useState(false);
   const [muted, setMuted] = useState(false);
+  const [buffering, setBuffering] = useState(false);
+  const [showChannelIndicator, setShowChannelIndicator] = useState(false);
   const [objChanel, setObjChanel] = useState({
     title: null,
     icon: null,
@@ -51,12 +54,14 @@ const App = () => {
   const handleBackChanel = useCallback(() => {
     if (activeChanels.length > 0) {
       setNumChanel((prev) => (prev <= 0 ? activeChanels.length - 1 : prev - 1));
+      setShowChannelIndicator(true);
     }
   }, [activeChanels.length, setNumChanel]);
 
   const handleNextChanel = useCallback(() => {
     if (activeChanels.length > 0) {
       setNumChanel((prev) => (prev < activeChanels.length - 1 ? prev + 1 : 0));
+      setShowChannelIndicator(true);
     }
   }, [activeChanels.length, setNumChanel]);
 
@@ -77,9 +82,30 @@ const App = () => {
     setOpenListChanels(true);
   }, []);
 
+  const handleCloseList = useCallback(() => {
+    setOpenListChanels(false);
+  }, []);
+
+  useKeyboardShortcuts({
+    onPreviousChannel: handleBackChanel,
+    onNextChannel: handleNextChanel,
+    onTogglePlay: handlePlay,
+    onToggleMute: handleMuted,
+    onOpenList: handleListChanels,
+    onCloseList: handleCloseList,
+  }, !openListChanels);
+
   return (
     <Container onWheel={handleChangeOnWheel}>
       <GlobalStyle />
+
+      <ChannelIndicator
+        currentChannel={numChanel}
+        totalChannels={activeChanels.length}
+        channelName={objChanel.title}
+        show={showChannelIndicator}
+      />
+
       <ReactPlayer
         width="100%"
         height={windowWidth < 720 ? "auto" : "100vh"}
@@ -90,8 +116,12 @@ const App = () => {
         controls={false}
         url={objChanel.url}
         onError={handleError}
+        onBuffer={() => setBuffering(true)}
+        onBufferEnd={() => setBuffering(false)}
         loop
       />
+
+      {buffering && <BufferingSpinner />}
       {!openListChanels && (
         <ControlChanel
           infoChanel={objChanel}
