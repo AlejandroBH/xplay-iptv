@@ -76,6 +76,10 @@ const App = () => {
 
   const handleError = useCallback(() => {
     console.error("Error al cargar el stream del canal");
+    setObjChanel((prev) => ({
+      ...prev,
+      url: "./assets/static.mp4",
+    }));
   }, []);
 
   const handleListChanels = useCallback(() => {
