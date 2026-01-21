@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const SearchContainer = styled.div`
   width: 100%;
-  padding: 16px;
+  padding: 10px;
   background: linear-gradient(180deg, #000000, #ffffff00);
   position: sticky;
   top: 0;
