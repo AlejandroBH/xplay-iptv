@@ -33,7 +33,7 @@ const SearchInputField = styled.input`
 
   @media screen and (width < 720px) {
     width: 100%;
-    font-size: 14px;
+    font-size: 16px;
     padding: 10px 14px;
   }
 `;
