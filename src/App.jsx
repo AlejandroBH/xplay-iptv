@@ -96,10 +96,18 @@ const App = () => {
     }
   }, [activeChanels.length, setNumChanel]);
 
+  const lastScrollTime = useRef(0);
+  const SCROLL_THROTTLE_MS = 500;
+
   const handleChangeOnWheel = useCallback(
     (event) => {
       if (!openListChanels) {
-        event.deltaY === 100 ? handleNextChanel() : handleBackChanel();
+        const now = Date.now();
+
+        if (now - lastScrollTime.current >= SCROLL_THROTTLE_MS) {
+          lastScrollTime.current = now;
+          event.deltaY > 0 ? handleNextChanel() : handleBackChanel();
+        }
       }
     },
     [openListChanels, handleNextChanel, handleBackChanel],
